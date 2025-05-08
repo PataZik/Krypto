@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Crypto Markt</h1>
+    <button id="hamburger-toggle" class="hamburger-toggle">☰</button>
+    <div id="controls" class="controls">
+      
+      <!-- Währungscontainer: eigene div -->
+      <div id="currency-container">
+        <div id="usd-symbol" class="currency-sign">$</div>
+        <div class="currency-toggle-wrapper">
+          <input type="checkbox" id="currency-switch" />
+          <label for="currency-switch" class="toggle-label">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+        <div id="eur-symbol" class="currency-sign">€</div>
+      </div>
+
+      <!-- Suchfeld -->
+      <input type="text" id="search-input" placeholder="Suchen..." />
+
+      <!-- Zeitintervalle -->
+      <div id="intervals">
+        <button data-range="1d">1T</button>
+        <button data-range="7d">7T</button>
+        <button data-range="31d">31T</button>
+        <button data-range="1y">1J</button>
+      </div>
+
+      <!-- Dark Mode Toggle -->
+      <button id="dark-mode-toggle">Dark Mode</button>
+    </div>
+  </header>
+
+  <main id="crypto-list"></main>
+  <script src="app.js"></script>
+</body>
+</html>
