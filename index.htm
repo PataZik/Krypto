@@ -1,3 +1,4 @@
+<!-- index.html (unverändert) :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1} -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -5,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Crypto Tracker</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
     <h1>Crypto Markt</h1>
     <button id="hamburger-toggle" class="hamburger-toggle">☰</button>
     <div id="controls" class="controls">
-      
-      <!-- Währungscontainer: eigene div -->
       <div id="currency-container">
         <div id="usd-symbol" class="currency-sign">$</div>
         <div class="currency-toggle-wrapper">
@@ -23,24 +23,27 @@
         </div>
         <div id="eur-symbol" class="currency-sign">€</div>
       </div>
-
-      <!-- Suchfeld -->
-      <input type="text" id="search-input" placeholder="Suchen..." />
-
-      <!-- Zeitintervalle -->
+      <input type="text" id="search-input" placeholder="Suchen." />
       <div id="intervals">
         <button data-range="1d">1T</button>
         <button data-range="7d">7T</button>
-        <button data-range="31d">31T</button>
+        <button data-range="31d">1M</button>
         <button data-range="1y">1J</button>
       </div>
-
-      <!-- Dark Mode Toggle -->
       <button id="dark-mode-toggle">Dark Mode</button>
     </div>
   </header>
 
   <main id="crypto-list"></main>
+
+  <!-- Modal für Chart -->
+  <div id="chartModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <canvas id="modalChartCanvas"></canvas>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
